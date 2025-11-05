@@ -5,8 +5,27 @@
 #include <string>
 #include <vector>
 #include <iomanip>
-#include <unistd.h>
 
+#ifdef _WIN32
+#include <windows.h>
+#define RED     ""
+#define GREEN   ""
+#define YELLOW  ""
+#define BLUE    ""
+#define MAGENTA ""
+#define CYAN    ""
+#define WHITE   ""
+#define RESET   ""
+#define BOLD    ""
+#define UNDER   ""
+#define BORDER_TOP_LEFT     "+"
+#define BORDER_TOP_RIGHT    "+"
+#define BORDER_BOTTOM_LEFT  "+"
+#define BORDER_BOTTOM_RIGHT "+"
+#define BORDER_HORIZONTAL   "-"
+#define BORDER_VERTICAL     "|"
+#else
+#include <unistd.h>
 #define RED     "\033[38;5;196m"
 #define GREEN   "\033[38;5;46m"
 #define YELLOW  "\033[38;5;226m"
@@ -17,6 +36,13 @@
 #define RESET   "\033[0m"
 #define BOLD    "\033[1m"
 #define UNDER   "\033[4m"
+#define BORDER_TOP_LEFT     "╔"
+#define BORDER_TOP_RIGHT    "╗"
+#define BORDER_BOTTOM_LEFT  "╚"
+#define BORDER_BOTTOM_RIGHT "╝"
+#define BORDER_HORIZONTAL   "═"
+#define BORDER_VERTICAL     "║"
+#endif
 
 namespace Utilities {
     void printBorder(int width = 40, const std::string& left = "╔", const std::string& right = "╗", const std::string& fill = "═");
