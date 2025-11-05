@@ -40,6 +40,7 @@ A comprehensive C++ quiz management system with role-based access control, multi
 **└── README.md**                  # This file <br>
 
 ## Installation & Compilation
+**Ubuntu**
 ```
 # Make the script executable
 chmod +x compile.sh
@@ -49,6 +50,10 @@ chmod +x compile.sh
 
 ./quiz_system
 ```
+
+**Windows**
+
+    g++ -std=c++14 -Wall -Wextra -pedantic -o quiz_system main.cpp User.cpp UserManager.cpp Question.cpp Leaderboard.cpp QuizManager.cpp Utilities.cpp
 
 ## Default Login Credentials
 
