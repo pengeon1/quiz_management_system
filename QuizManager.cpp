@@ -30,7 +30,6 @@ int QuizSet::takeQuiz() {
                 score += q->getPoints();
                 std::cout << GREEN << "Correct! +" << q->getPoints() << " pts" << RESET << std::endl;
             } else std::cout << RED << "Wrong! Correct: " << q->getCorrectAnswer() << RESET << std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
         } catch (const InvalidAnswerException& e) {
             std::cout << RED << "Error: " << e.what() << " Score unchanged." << RESET << std::endl;
         }
